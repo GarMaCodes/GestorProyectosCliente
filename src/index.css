@@ -1,13 +1,448 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*Fuentes personalizadas*/
+@font-face {
+  font-family: "Montserrat";
+  src: url("../src/fonts/Montserrat-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*Estilos Generales*/
+* {
+  margin: 0;
+  padding: 0px;
+}
+
+.owner {
+  position: absolute;
+  top: 600px;
+  left: 0px;
+  right: 0px;
+  font-family: "Montserrat";
+  text-align: center;
+  color: rgb(4, 36, 78);
+}
+
+/*Login y NuevaCuenta*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(186, 197, 245);
+  font-family: "Montserrat";
+}
+
+.loginForm {
+  width: 25%;
+  min-height: 200px;
+  background-color: rgb(186, 197, 245);
+  color: #333;
+  text-align: center;
+  border-radius: 10px;
+  padding: 3%;
+}
+
+.form {
+  width: 80%;
+  height: auto;
+  margin: 30px auto;
+  /*border: 1px solid red;*/
+}
+
+.form label {
+  font-size: 18px;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  width: 90%;
+  height: 25px;
+  text-align: center;
+  color: rgb(170, 168, 168);
+  margin-bottom: 30px;
+  border: 3px solid #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 300ms;
+}
+
+.form input[type="text"]:focus,
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  color: #333;
+  border: 3px solid #0a5d68;
+}
+
+.form input[type="submit"] {
+  width: 60%; /*97.5%;*/
+  height: 30px; /*45px;*/
+  background-color: #456ca0;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: all 300ms;
+}
+
+.form input[type="submit"]:hover {
+  background-color: rgb(4, 36, 78);
+  cursor: pointer;
+}
+
+.enlaceCuenta {
+  text-decoration: none;
+  color: #456ca0;
+  transition: all 300ms;
+}
+
+.enlaceCuenta:hover {
+  color: rgb(4, 36, 78);
+  /*text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;*/
+  cursor: pointer;
+}
+
+/*Proyectos*/
+.appContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sideBar {
+  width: 20%;
+  min-height: 100vh;
+  font-family: "Montserrat";
+  text-align: center;
+  background-color: rgb(186, 197, 245);
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+
+.sideBar h1 {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.newProjectButton {
+  width: 90%;
+  height: 30px;
+  color: white;
+  background-color: #456ca0;
+  margin-top: 30px;
+  border: none;
+  border-radius: 5px;
+  transition: all 300ms;
+}
+
+.newProjectButton:hover {
+  background-color: rgb(4, 36, 78);
+  cursor: pointer;
+}
+
+.newProjectForm input[type="text"] {
+  width: 82%;
+  height: 20px;
+  color: rgb(170, 168, 168);
+  border: 2px solid #ccc;
+  margin-top: 60px;
+  padding: 10px;
+  transition: all 300ms;
+}
+
+.newProjectForm input[type="text"]:focus {
+  color: #333;
+  border: 2px solid #0a5d68;
+}
+
+.addProyectButton {
+  width: 55%;
+  height: 30px;
+  color: white;
+  background-color: #456ca0;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  transition: all 300ms;
+}
+
+.addProyectButton:hover {
+  background-color: rgb(4, 36, 78);
+  cursor: pointer;
+}
+
+.cancelButton {
+  width: 30%;
+  height: 30px;
+  color: white;
+  background-color: rgb(214, 140, 28);
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  transition: all 300ms;
+}
+
+.cancelButton:hover {
+  background-color: rgb(243, 175, 73);
+  cursor: pointer;
+}
+
+.errorBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  height: 40px;
+  background-color: transparent;
+  margin: 10px auto;
+  padding: 0%;
+}
+
+.errorBox p {
+  width: 70%;
+  height: 38px;
+  font-size: 14px;
+  color: rgb(92, 8, 8);
+}
+
+.proyectos {
+  width: 20%;
+  min-height: 200px;
+  margin-top: 10px;
+  background-color: rgb(4, 36, 78);
+  color: white;
+  transition: all 800ms;
+  position: absolute;
+  /*border: 1px solid red;*/
+}
+
+.proyectos h2 {
+  margin-top: 10px;
+}
+
+.proyectos p {
+  font-size: 13px;
+  margin-top: 30px;
+}
+
+.listadoProyectos {
+  width: 100%;
+  height: auto;
+  list-style: none;
+  text-align: left;
+  margin: 20px auto;
+  margin-bottom: 10px;
+  /*border: 1px solid red;*/
+}
+
+.oneProjectButton {
+  width: 100%;
+  height: 30px;
+  text-align: left;
+  border: 1px solid #ccc;
+  background-color: rgb(4, 36, 78);
+  color: white;
+  border: none;
+  padding: 2%;
+  transition: all 300ms;
+}
+
+.oneProjectButton:hover {
+  background-color: rgb(214, 140, 28);
+  color: white;
+  cursor: pointer;
+}
+
+.seccionPrincipal {
+  width: 78.5%;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  width: 90%;
+  height: 80px;
+  background-color: rgb(4, 36, 78);
+  padding: 5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header p {
+  font-family: "Montserrat";
+  font-size: 22px;
+  color: white;
+}
+
+.header a {
+  font-family: "Montserrat";
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+/*.header a:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}*/
+
+.divFormTarea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  height: 180px;
+  background-color: #456ca0;
+}
+
+.divFormTarea form {
+  width: 60%;
+  height: 80%;
+}
+
+.divFormTarea input[type="text"] {
+  width: 93%;
+  height: 20px;
+  text-align: left;
+  color: rgb(170, 168, 168);
+  margin-bottom: 30px;
+  border: 2px solid #ccc;
+  padding: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
+  transition: all 300ms;
+}
+
+.divFormTarea input[type="text"]:focus {
+  color: #333;
+  border: 2px solid #0a5d68;
+}
+
+.divFormTarea input[type="submit"] {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  line-height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.errorDiv {
+  width: 60%;
+  height: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  transition: all 300ms;
+}
+
+.errorMessage {
+  font-family: "Montserrat";
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+.taskContainer {
+  width: 100%;
+  min-height: 200px;
+  font-family: "Montserrat";
+  text-align: center;
+  padding-top: 20px;
+}
+
+.taskContainer .listadoTareas {
+  width: 80%;
+  height: auto;
+  font-size: 20px;
+  margin: 20px auto;
+  /*border: 1px solid red;*/
+}
+
+.tarea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  width: 90%;
+  height: auto;
+  list-style: none;
+  margin: 20px auto;
+  padding: 10px;
+  box-shadow: 1px 3px 6px gray;
+}
+
+.completeButton {
+  width: 150px;
+  height: 28px;
+  color: white;
+  background-color: #456ca0;
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.incompleteButton {
+  width: 150px;
+  height: 28px;
+  color: white;
+  background-color: rgb(214, 140, 28);
+  border: none;
+  padding: 3px;
+  cursor: pointer;
+}
+
+/*.completeButton:hover,
+.incompleteButton:hover {
+  background-color: #0a5d68;
+}*/
+
+/*.actions{
+  border: 1px solid red;
+}*/
+
+.btn {
+  width: 100px;
+  height: 30px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  width: 150px;
+  height: 30px;
+  background-color: rgb(230, 78, 78);
+  color: white;
+  padding: 3px;
+}
+
+.deleteButton:hover {
+  background-color: rgb(245, 131, 131);
+  cursor: pointer;
+}
+
+.alerta-ok {
+  background-color: rgb(109, 211, 109);
+  color: rgb(2, 103, 2);
+}
+
+.alerta-error {
+  background-color: rgb(230, 78, 78);
+  color: white;
+  margin-top: 30px;
+  padding: 5px;
 }
